@@ -16,7 +16,7 @@ var BANNER =	'/*!\n' +
 							' * The MIT License\n' +
 							' */\n' +
 							'/*!\n' +
-							' * Bootstrap v' + bowerJSON.devDependencies["bootstrap-sass"] + ' (http://getbootstrap.com/)\n' +
+							' * Bootstrap v' + bowerJSON.devDependencies["bootstrap"] + ' (http://getbootstrap.com/)\n' +
 							' * Copyright 2011-' + new Date().getFullYear() + ' Twitter, Inc\n' +
 							' * Licensed under the MIT license\n' +
 							' */';
@@ -75,7 +75,7 @@ gulp.task('copy:bower', ['install:bower'], function() {
 		.pipe(plugins.mainBowerFiles({
 			includeDev: true
 		}))
-		.pipe(plugins.regexRename(/\/dist\//, '/'))
+		.pipe(plugins.regexRename(/\/dist\/(js\/)?/, '/'))
 		.pipe(gulp.dest(DEST_DIR + '/lib/'));
 });
 
@@ -114,8 +114,7 @@ gulp.task('build:css', ['lint:scss'], function() {
 		// sass compile
 		.pipe(plugins.sass({
 			includePaths: [
-				'bower_components/bootstrap-sass/assets/stylesheets/',
-				'bower_components/Honoka/scss/'
+				'bower_components/'
 			],
 			sourcemap: 'none',
 			lineFeed: 'lf',
@@ -253,4 +252,3 @@ gulp.task('dev', function() {
 gulp.task('dist', function() {
 	runSequence(['release'], ['clean:dist', 'init'], ['lib'], ['build', 'copy:dist'], ['optimize']);
 });
-

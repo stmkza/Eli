@@ -1,5 +1,5 @@
 @import "variables";
-@import "bootstrap/variables";
+@import "bootstrap/scss/variables";
 
 @mixin retina {
 	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {

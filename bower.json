@@ -16,34 +16,22 @@
     "tests"
   ],
   "devDependencies": {
-    "jquery": "~2.1.4",
-    "Honoka": "3.3.7-a",
-    "bootstrap-sass": "3.3.7",
-    "bootstrap": "3.3.7"
+    "jquery": ">=1.9.1",
+    "Honoka": "4.0.0-alpha.1",
+    "bootstrap": "4.0.0-alpha.5"
   },
 	"overrides": {
 		"Honoka": {
 			"main": []
 		},
-		"bootstrap": {
-			"main": ["dist/fonts/**/*", "dist/js/bootstrap.**js"]
-		},
-		"bootstrap-sass": {
-			"main": []
-		},
 		"jquery": {
-			"main": ["dist/jquery.**js"]
-		}
-  },
-  "exportsOverride": {
-    "jquery": {
-      ".": "dist/jquery**.js"
-    },
-    "Honoka": {},
-    "bootstrap-sass": {},
+			"main": ["dist/jquery.min.js"]
+		},
     "bootstrap": {
-      "js": "dist/js/bootstrap.**js",
-      "fonts": "dist/fonts/**/*"
+      "main": ["dist/js/bootstrap.min.js"]
+    },
+    "tether": {
+      "main": ["dist/js/tether.min.js"]
     }
   }
 }

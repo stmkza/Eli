@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
 @import "eli/variables";
-@import "honoka/variables";
-@import "honoka/honoka";
+
+@import "honoka/scss/honoka/variables";
+@import "honoka/scss/honoka/mixins";
+
+@import "honoka/scss/bootstrap";
